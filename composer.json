@@ -1,0 +1,37 @@
+{
+    "name": "jlepeltier/symfony-cli-skeleton",
+    "description": "Symfony skeleton for cli projects",
+    "require": {
+        "php": ">=5.3.3",
+        "doctrine/orm": "~2.2,>=2.2.3",
+        "symfony/console": "2.*",
+        "symfony/finder": "2.*",
+        "symfony/yaml": "2.*",
+        "symfony/class-loader" : "2.*",
+        "symfony/framework-bundle": "2.*",
+        "symfony/monolog-bundle": "2.*",
+        "symfony/swiftmailer-bundle": "2.*",
+        "doctrine/doctrine-bundle": "~1.2",
+        "sensio/distribution-bundle": "~2.3",
+        "incenteev/composer-parameter-handler": "~2.0"
+    },
+    "require-dev": {
+        "patchwork/dumper" : "dev-master"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap"
+        ],
+        "post-update-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap"
+        ]
+    },
+    "extra": {
+        "symfony-app-dir": "var",
+        "incenteev-parameters": {
+            "file": "config/parameters.yml"
+        }
+    }
+}
