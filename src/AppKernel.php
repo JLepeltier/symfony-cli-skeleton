@@ -36,4 +36,13 @@ class AppKernel extends Kernel
     {
          return $this->rootDir.'/var/logs';
     }
+
+    public function getRootDir()
+    {
+        if (null === $this->rootDir) {
+                $this->rootDir = __DIR__.'/..';
+        }
+
+        return $this->rootDir;
+    }
 }
